@@ -85,7 +85,7 @@ class NetworkedTodoManager: TodoManager {
     private func processResponse(data: Data?,
                                  response: URLResponse?,
                                  error: Error?,
-                                 completion: @escaping (TodoItemManagerResponse) -> (),
+                                 completion: @escaping (TodoManagerResponse) -> (),
                                  errorResolver: ((HTTPURLResponse) -> Bool)?) {
         if let error = error {
             return completion(.failure(source: .networked, code: 0, description: error.localizedDescription))

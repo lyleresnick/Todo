@@ -2,19 +2,13 @@
 
 import Foundation
 
-enum  TodoSemanticEvent: Error {
+enum  TodoSemanticEvent: SemanticEvent {
     case notFound
     case noData
 }
 
-enum DataSources {
-    case test
-    case coreData
-    case networked
-}
-
-typealias TodoListManagerResponse = ManagerResponse<[Todo], DataSources, TodoSemanticEvent>
-typealias TodoItemManagerResponse = ManagerResponse<Todo, DataSources, TodoSemanticEvent>
+typealias TodoListManagerResponse = ManagerResponse<[Todo]>
+typealias TodoItemManagerResponse = ManagerResponse<Todo>
 
 protocol TodoManager {
     
